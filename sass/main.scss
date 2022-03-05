@@ -1,0 +1,179 @@
+@import './colors';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-size: 1.6rem;
+	font-family: 'Red Hat Display', sans-serif;
+	background-color: $background;
+}
+
+h1,
+.bgc {
+	display: none;
+}
+
+// card
+
+.card {
+	max-width: 330px;
+	background-color: $white;
+	border-radius: 1em;
+	overflow: hidden;
+
+	&__hero-img {
+		img {
+			width: 100%;
+		}
+	}
+
+	&__body {
+		padding: 1.5em;
+
+		&-text {
+			text-align: center;
+			padding: 0 1em;
+
+			h2 {
+				margin-bottom: 0.75em;
+				color: $darkBlue;
+				font-weight: 900;
+			}
+			p {
+				margin-bottom: 1.5em;
+				color: $desaturatedBlue;
+				font-size: 1.5rem;
+				line-height: 175%;
+			}
+		}
+
+		&-plan {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1em;
+			background-color: $veryPaleBlue;
+			border-radius: 1em;
+
+			&-name {
+				justify-content: space-between;
+				line-height: 1.5em;
+
+				h3 {
+					font-size: 1.6rem;
+					color: $darkBlue;
+					font-weight: 700;
+				}
+				p {
+					font-size: 1.4rem;
+					color: $desaturatedBlue;
+				}
+			}
+
+			a {
+				font-size: 1.4rem;
+				font-weight: 700;
+				color: $brightBlue;
+
+				&:hover {
+					color: $hover;
+					text-decoration: none;
+				}
+			}
+		}
+
+		&-btns {
+			display: flex;
+			flex-direction: column;
+			margin-top: 1.5em;
+
+			button {
+				width: 100%;
+				padding: 1em;
+				border: 1px solid transparent;
+				border-radius: 1em;
+				font-weight: 900;
+				cursor: pointer;
+			}
+
+			.order {
+				color: $white;
+				background-color: $brightBlue;
+				box-shadow: 0 1.5em 15px $paleBlue;
+				margin-bottom: 0.5em;
+				transition: background-color 0.3s;
+
+				&:hover {
+					background-color: $hover;
+				}
+			}
+
+			.cancel {
+				color: $desaturatedBlue;
+				background-color: transparent;
+				transition: color 0.3s;
+
+				&:hover {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+// atribution
+.attribution {
+	position: absolute;
+	bottom: 10px;
+	font-size: 11px;
+	text-align: center;
+	transform: translateX(-50%);
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 576px) {
+	body {
+		background-color: $paleBlue;
+		position: relative;
+	}
+	.bgc {
+		display: block;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		z-index: -100;
+	}
+	.card {
+		max-width: 450px;
+
+		&__body {
+			padding: 3em;
+
+			&-text {
+				h2 {
+					font-size: 2.8rem;
+				}
+			}
+			&-plan {
+				padding: 1.5em;
+			}
+		}
+	}
+}
